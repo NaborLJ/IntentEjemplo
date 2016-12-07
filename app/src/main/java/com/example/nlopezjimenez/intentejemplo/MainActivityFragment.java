@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivityFragment extends Fragment {
@@ -23,8 +24,11 @@ public class MainActivityFragment extends Fragment {
 
         boton.setOnClickListener( new View.OnClickListener() {
             public void onClick(View vista) {
+                if(getResources().getBoolean(R.bool.landScape)){
+                    Toast.makeText(getActivity(),"Posición horizontal", Toast.LENGTH_LONG).show();
+                }else{
                 Intent intent = new Intent(getActivity(), Main2Activity.class);
-                startActivity(intent);
+                startActivity(intent);}
             }
         });
         return vista;
