@@ -26,6 +26,7 @@ public class MainActivityFragment extends Fragment {
             public void onClick(View vista) {
                 if(getResources().getBoolean(R.bool.landScape)){
                     Toast.makeText(getActivity(),"Posición horizontal", Toast.LENGTH_LONG).show();
+
                 }else{
                 Intent intent = new Intent(getActivity(), Main2Activity.class);
                 startActivity(intent);}
