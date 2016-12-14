@@ -1,5 +1,6 @@
 package com.example.nlopezjimenez.intentejemplo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -11,6 +12,18 @@ import android.widget.Toast;
 
 
 public class MainActivityFragment extends Fragment {
+    Comunicador comunicador;
+
+    public interface Comunicador{
+        public void mensaje(String texto);
+    }
+
+    public void onAttach(Context contexto){
+        super.onAttach(contexto);
+        comunicador = (Comunicador)contexto;
+    }
+
+    final static String FRASE = "Hi world!";
 
     public MainActivityFragment() {
     }
@@ -25,11 +38,17 @@ public class MainActivityFragment extends Fragment {
         boton.setOnClickListener( new View.OnClickListener() {
             public void onClick(View vista) {
                 if(getResources().getBoolean(R.bool.landScape)){
-                    Toast.makeText(getActivity(),"Posición horizontal", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getActivity(),"Posición horizontal", Toast.LENGTH_LONG).show();
+                    comunicador.mensaje("Adiós mundo");
 
                 }else{
-                Intent intent = new Intent(getActivity(), Main2Activity.class);
-                startActivity(intent);}
+                //Intent intent = new Intent(getActivity(), Main2Activity.class);
+                //startActivity(intent)
+                Intent intentPrincipal = new Intent(getActivity(),Main2Activity.class);
+                intentPrincipal.putExtra(MainActivityFragment.FRASE, "Adiós mundo");
+                startActivity(intentPrincipal);
+
+                }
             }
         });
         return vista;
