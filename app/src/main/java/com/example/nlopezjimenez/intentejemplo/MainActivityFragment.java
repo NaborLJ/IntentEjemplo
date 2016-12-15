@@ -16,7 +16,7 @@ public class MainActivityFragment extends Fragment {
     }
     Comunicador comunicar;
     public interface Comunicador{
-        public void mensaje(String texto);
+        public void msg(String texto);
     }
 
     public void onAttach(Context contexto){
@@ -31,15 +31,15 @@ public class MainActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View auxFragment = inflater.inflate(com.example.nlopezjimenez.intentejemplo.R.layout.fragment_main, container, false);
+        View auxView = inflater.inflate(com.example.nlopezjimenez.intentejemplo.R.layout.fragment_main, container, false);
 
-        Button boton = (Button) auxFragment.findViewById(com.example.nlopezjimenez.intentejemplo.R.id.button1);
+        Button boton = (Button) auxView.findViewById(com.example.nlopezjimenez.intentejemplo.R.id.button1);
 
         boton.setOnClickListener( new View.OnClickListener() {
             public void onClick(View vista) {
                 if(getResources().getBoolean(com.example.nlopezjimenez.intentejemplo.R.bool.landScape)){
                     //Toast.makeText(getActivity(),"Posición horizontal", Toast.LENGTH_LONG).show();
-                    comunicar.mensaje("Sayonara baby");
+                    comunicar.msg("Sayonara baby");
 
                 }else{
                 Intent intent = new Intent(getActivity(), Main2Activity.class);
@@ -49,6 +49,6 @@ public class MainActivityFragment extends Fragment {
                 }
             }
         });
-        return auxFragment;
+        return auxView;
     }
 }

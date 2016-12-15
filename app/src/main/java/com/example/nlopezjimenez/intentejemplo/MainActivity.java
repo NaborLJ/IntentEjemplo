@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
             }
         });
     }
-    public void mensaje(String texto){
+    public void msg(String texto){
         Main2ActivityFragment fragment=(Main2ActivityFragment) getSupportFragmentManager().findFragmentById(com.example.nlopezjimenez.intentejemplo.R.id.fragment);
         if(fragment != null){
             fragment.setText(texto);
