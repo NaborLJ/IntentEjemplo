@@ -9,16 +9,16 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainActivityFragment.Comunicador{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(com.example.nlopezjimenez.intentejemplo.R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(com.example.nlopezjimenez.intentejemplo.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(com.example.nlopezjimenez.intentejemplo.R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,16 +27,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void mensaje(String texto){
+        Main2ActivityFragment fragment=(Main2ActivityFragment) getSupportFragmentManager().findFragmentById(com.example.nlopezjimenez.intentejemplo.R.id.fragment);
+        if(fragment != null){
+            fragment.setText(texto);
+        }
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(com.example.nlopezjimenez.intentejemplo.R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == com.example.nlopezjimenez.intentejemplo.R.id.action_settings) {
             return true;
         }
         return super.onOptionsItemSelected(item);

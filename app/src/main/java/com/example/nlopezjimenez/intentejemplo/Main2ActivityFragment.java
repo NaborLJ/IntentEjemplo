@@ -7,23 +7,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+
 public class Main2ActivityFragment extends Fragment {
     TextView texto;
-    View auxFragment;
+
+
     public Main2ActivityFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main_emergente, container, false);
-        texto = (TextView) auxFragment.findViewById(R.id.text1);
+        View auxFragment=inflater.inflate(com.example.nlopezjimenez.intentejemplo.R.layout.fragment_main_emergente, container, false);
+        texto = (TextView) auxFragment.findViewById(com.example.nlopezjimenez.intentejemplo.R.id.text1);
         return auxFragment;
     }
-    public void setText(String text){
+
+    public void setText(String text) {
         texto.setText(text);
+
+
     }
 }
