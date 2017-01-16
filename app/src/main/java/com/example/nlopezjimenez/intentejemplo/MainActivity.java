@@ -18,14 +18,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
         Toolbar toolbar = (Toolbar) findViewById(com.example.nlopezjimenez.intentejemplo.R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(com.example.nlopezjimenez.intentejemplo.R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
     public void msg(String texto){
         Main2ActivityFragment fragment=(Main2ActivityFragment) getSupportFragmentManager().findFragmentById(com.example.nlopezjimenez.intentejemplo.R.id.fragment);
