@@ -15,4 +15,13 @@
         android:text="Adios!"
         ></TextView>
 
+    <Button
+        android:text="Salir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="156dp"
+        android:id="@+id/cancel" />
+
 </RelativeLayout>
